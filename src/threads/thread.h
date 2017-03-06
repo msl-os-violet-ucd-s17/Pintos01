@@ -141,4 +141,6 @@ void thread_set_nice (int);
 int thread_get_recent_cpu (void);
 int thread_get_load_avg (void);
 
+bool ticks_comparison(const struct list_elem *left, const struct list_elem *right);
+
 #endif /* threads/thread.h */

@@ -102,7 +102,7 @@ timer_sleep (int64_t finish)
  enum intr_level previouslevel = intr_disable();
  struct thread *running = thread_current();
  running->timervalue = start + finish;
- list_push_front(&threads_asleep, &running->elem);
+ list_insert_ordered(&threads_asleep, &running->elem, (list_less_func *) &ticks_comparison, NULL);
  thread_block();
  intr_set_level(previouslevel);
 
@@ -191,13 +191,13 @@ struct list_elem *element = list_begin(&threads_asleep);
 while (element != list_end(&threads_asleep))
  {
    struct thread *checkthread = list_entry(element, struct thread, elem);
-   if (ticks >= checkthread->timervalue)
+   if (ticks <= checkthread->timervalue)
     {
+     break;
+    }
      list_remove(element);
      thread_unblock(checkthread);
      element = list_begin(&threads_asleep);
-    }
-
  }
  intr_set_level(previouslevel);
 }
