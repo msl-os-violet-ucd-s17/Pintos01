@@ -594,3 +594,39 @@ if (leftthread->timervalue < rightthread->timervalue)
 else
  return false;
 }
+
+/* The priority donation allows threads that are waiting with a higher priority to 
+give up thier priority temperally so that lower threads that have a lock can execute. This 
+takes away starvation that might otherwise occur. Once the lock is released than the higher threads
+get back their previous priorities. */
+void donate_priority(void) 
+{
+   struct thread *t = thread_current();
+   /*stuct thread *l = (lock) - waiting for the lock - find the variable lock*/
+   
+   while (l && (priority->t < priority->l))
+   {
+      temp = priority->t;
+      priority->t = priority->l;
+      priority->l = temp
+   }
+   if l->released
+   {
+      get_back_donation();
+   }
+}
+void get_back_donation(void)
+{
+   while (priority->t > priority->l)
+   {
+      temp = priority->l;
+      priority->l = priority->t;
+      priority->t = temp;
+   }
+}
+
+      
+      
+    
+          
+   
