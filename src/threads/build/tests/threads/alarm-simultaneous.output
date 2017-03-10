@@ -1,18 +1,18 @@
-qemu-system-x86_64 -device isa-debug-exit -hda /tmp/2f50hRWObN.dsk -m 4 -net none -nographic -monitor null
+qemu-system-x86_64 -device isa-debug-exit -hda /tmp/895rdOrUlx.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading...........
 Kernel command line: -q run alarm-simultaneous
 Pintos booting with 3,968 kB RAM...
 367 pages available in kernel pool.
 367 pages available in user pool.
-Calibrating timer...  431,718,400 loops/s.
+Calibrating timer...  314,163,200 loops/s.
 Boot complete.
 Executing 'alarm-simultaneous':
 (alarm-simultaneous) begin
 (alarm-simultaneous) Creating 3 threads to sleep 5 times each.
 (alarm-simultaneous) Each thread sleeps 10 ticks each time.
 (alarm-simultaneous) Within an iteration, all threads should wake up on the same tick.
-(alarm-simultaneous) iteration 0, thread 0: woke up after 10 ticks
+(alarm-simultaneous) iteration 0, thread 0: woke up after 11 ticks
 (alarm-simultaneous) iteration 0, thread 1: woke up 0 ticks later
 (alarm-simultaneous) iteration 0, thread 2: woke up 0 ticks later
 (alarm-simultaneous) iteration 1, thread 0: woke up 10 ticks later
@@ -29,8 +29,8 @@ Executing 'alarm-simultaneous':
 (alarm-simultaneous) iteration 4, thread 2: woke up 0 ticks later
 (alarm-simultaneous) end
 Execution of 'alarm-simultaneous' complete.
-Timer: 308 ticks
-Thread: 0 idle ticks, 309 kernel ticks, 0 user ticks
-Console: 1614 characters output
+Timer: 313 ticks
+Thread: 251 idle ticks, 63 kernel ticks, 0 user ticks
+Console: 1615 characters output
 Keyboard: 0 keys pressed
 Powering off...

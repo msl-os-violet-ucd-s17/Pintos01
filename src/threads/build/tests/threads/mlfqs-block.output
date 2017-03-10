@@ -1,11 +1,11 @@
-qemu-system-x86_64 -device isa-debug-exit -hda /tmp/Bx0HSx53F0.dsk -m 4 -net none -nographic -monitor null
+qemu-system-x86_64 -device isa-debug-exit -hda /tmp/jxHGIzkwo4.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading...........
 Kernel command line: -q -mlfqs run mlfqs-block
 Pintos booting with 3,968 kB RAM...
 367 pages available in kernel pool.
 367 pages available in user pool.
-Calibrating timer...  548,044,800 loops/s.
+Calibrating timer...  314,163,200 loops/s.
 Boot complete.
 Executing 'mlfqs-block':
 (mlfqs-block) begin
@@ -18,8 +18,8 @@ Executing 'mlfqs-block':
 (mlfqs-block) Block thread should have already acquired lock.
 (mlfqs-block) end
 Execution of 'mlfqs-block' complete.
-Timer: 3049 ticks
-Thread: 0 idle ticks, 3049 kernel ticks, 0 user ticks
-Console: 752 characters output
+Timer: 3050 ticks
+Thread: 500 idle ticks, 2550 kernel ticks, 0 user ticks
+Console: 754 characters output
 Keyboard: 0 keys pressed
 Powering off...
