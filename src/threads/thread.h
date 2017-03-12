@@ -103,6 +103,9 @@ struct thread
     
     /*Value used by the alarm clock to time thread's sleep time */
     int64_t timervalue;
+
+    int recent_cpu;
+    int niceness;
   };
 
 /* If false (default), use round-robin scheduler.
@@ -144,4 +147,12 @@ int thread_get_load_avg (void);
 bool ticks_comparison(const struct list_elem *left, const struct list_elem *right);
 
 bool priority_comparison(const struct list_elem *left, const struct list_elem *right);
+
+void thread_calculate_loadavg(void);
+void thread_calculate_recentcpu_all(void);
+void thread_calculate_priority_all(void);
+void thread_calculate_recentcpu_single(struct thread *cputhread);
+void thread_calculate_priority_single(struct thread *prioritythread);
+
+
 #endif /* threads/thread.h */
